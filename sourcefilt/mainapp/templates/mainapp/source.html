@@ -1,0 +1,488 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css_files %}
+     <!-- bootstrap core css -->
+     <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/bootstrap.css' %}" />
+     <!-- fonts style -->
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+     <!-- font awesome style -->
+     <link href="{% static 'mainapp/css/font-awesome.min.css' %}" rel="stylesheet" />
+     <!-- Custom styles for this template -->
+     <link href="{% static 'mainapp/css/style.css' %}" rel="stylesheet" />
+     <!-- responsive style -->
+     <link href="{% static 'mainapp/css/responsive.css' %}" rel="stylesheet" />
+     <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'mainapp/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'mainapp/css/font-awesome1.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'mainapp/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'mainapp/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'mainapp/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'mainapp/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'mainapp/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'mainapp/css/style1.css' %}" type="text/css">
+{% endblock  %}
+
+{% block title %}source{% endblock  %}
+
+{% block content %}
+<!-- Hero Section Begin -->
+<section class="hero">
+     <div class="container">
+         <div class="row">
+             <div class="col-lg-3">
+                 <div class="hero__categories">
+                     <div class="hero__categories__all">
+                         <i class="fa fa-bars"></i>
+                         <span>Kategoriler</span>
+                     </div>
+                     <ul>
+                         <li><a href="#">TYT SORU BANKALARI</a></li>
+                         <li><a href="#">AYT SORU BANKALARI</a></li>
+                         <li><a href="#">TYT BRANŞ DENEMELERİ</a></li>
+                         <li><a href="#">AYT BRANŞ DENEMELERİ</a></li>
+                         <li><a href="#">TYT KONU ANLATIMLI</a></li>
+                         <li><a href="#">AYT KONU ANLATIMLI</a></li>
+                         <li><a href="#">TYT GENEL DENEME</a></li>
+                         <li><a href="#">AYT GENEL DENEME</a></li>
+                         <li><a href="#">YDS SORU BANKALARI</a></li>
+                         <li><a href="#">YDS DENEMELERİ</a></li>
+                     </ul>
+                 </div>
+             </div>
+             <div class="col-lg-9">
+                 <div class="hero__search">
+                     <div class="hero__search__form">
+                         <form action="#">
+                             <input type="text" placeholder="Ne arıyorsunuz?">
+                             <button type="submit" class="site-btn">ARA</button>
+                         </form>
+                     </div>
+                 </div>
+                 <div class="hero__item set-bg" data-setbg="{% static 'mainapp/img/hero/banner.png' %}">
+                 </div>
+             </div>
+         </div>
+     </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- Categories Section Begin -->
+<section class="categories">
+     <div class="container">
+         <div class="row">
+             <div class="categories__slider owl-carousel">
+                 <div class="col-lg-3">
+                     <div class="categories__item set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <h5><a href="#">TYT SORU BANKALARI</a></h5>
+                     </div>
+                 </div>
+                 <div class="col-lg-3">
+                     <div class="categories__item set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <h5><a href="#">AYT SORU BANKALARI</a></h5>
+                     </div>
+                 </div>
+                 <div class="col-lg-3">
+                     <div class="categories__item set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <h5><a href="#">TYT ALAN DENEMELERİ</a></h5>
+                     </div>
+                 </div>
+                 <div class="col-lg-3">
+                     <div class="categories__item set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <h5><a href="#">AYT DENEMELERİ</a></h5>
+                     </div>
+                 </div>
+                 <div class="col-lg-3">
+                     <div class="categories__item set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <h5><a href="#">YDS SORU BANKALARI</a></h5>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</section>
+<!-- Categories Section End -->
+
+<!-- Featured Section Begin -->
+<section class="featured spad">
+     <div class="container">
+         <div class="row">
+             <div class="col-lg-12">
+                 <div class="section-title">
+                     <h2>Ne Arıyorsunuz?</h2>
+                 </div>
+                 <div class="featured__controls">
+                     <ul>
+                         <li class="active" data-filter="*">Tümü</li>
+                         <li data-filter=".oranges">TYT</li>
+                         <li data-filter=".fresh-meat">AYT</li>
+                         <li data-filter=".vegetables">YDS</li>
+                         <li data-filter=".fastfood">DİĞER</li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+         <div class="row featured__filter">
+             <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                 <div class="featured__item">
+                     <div class="featured__item__pic set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <ul class="featured__item__pic__hover">
+                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                         </ul>
+                     </div>
+                     <div class="featured__item__text">
+                         <h6><a href="#">TYT SORU BANKASI</a></h6>
+                         <h5>Yakında</h5>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+                 <div class="featured__item">
+                     <div class="featured__item__pic set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <ul class="featured__item__pic__hover">
+                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                         </ul>
+                     </div>
+                     <div class="featured__item__text">
+                         <h6><a href="#">TYT SORU BANKASI</a></h6>
+                         <h5>Yakında</h5>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
+                 <div class="featured__item">
+                     <div class="featured__item__pic set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <ul class="featured__item__pic__hover">
+                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                         </ul>
+                     </div>
+                     <div class="featured__item__text">
+                         <h6><a href="#">TYT SORU BANKASI</a></h6>
+                         <h5>Yakında</h5>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
+                 <div class="featured__item">
+                     <div class="featured__item__pic set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <ul class="featured__item__pic__hover">
+                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                         </ul>
+                     </div>
+                     <div class="featured__item__text">
+                         <h6><a href="#">TYT SORU BANKASI</a></h6>
+                         <h5>Yakında</h5>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+                 <div class="featured__item">
+                     <div class="featured__item__pic set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <ul class="featured__item__pic__hover">
+                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                         </ul>
+                     </div>
+                     <div class="featured__item__text">
+                         <h6><a href="#">AYT SORU BANKASI</a></h6>
+                         <h5>Yakında</h5>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
+                 <div class="featured__item">
+                     <div class="featured__item__pic set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <ul class="featured__item__pic__hover">
+                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                         </ul>
+                     </div>
+                     <div class="featured__item__text">
+                         <h6><a href="#">AYT SORU BANKASI</a></h6>
+                         <h5>Yakında</h5>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+                 <div class="featured__item">
+                     <div class="featured__item__pic set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <ul class="featured__item__pic__hover">
+                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                         </ul>
+                     </div>
+                     <div class="featured__item__text">
+                         <h6><a href="#">AYT SORU BANKASI</a></h6>
+                         <h5>Yakında</h5>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
+                 <div class="featured__item">
+                     <div class="featured__item__pic set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
+                         <ul class="featured__item__pic__hover">
+                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                         </ul>
+                     </div>
+                     <div class="featured__item__text">
+                         <h6><a href="#">AYT SORU BANKASI</a></h6>
+                         <h5>Yakında</h5>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</section>
+<!-- Featured Section End -->
+
+<!-- Banner Begin -->
+<div class="banner">
+     <div class="container">
+         <div class="row">
+             <div class="col-lg-6 col-md-6 col-sm-6">
+                 <div class="banner__pic">
+                     <img src="{% static 'mainapp/img/ban1.png' %}" alt="">
+                 </div>
+             </div>
+             <div class="col-lg-6 col-md-6 col-sm-6">
+                 <div class="banner__pic">
+                     <img src="{% static 'mainapp/img/ban2.png' %}" alt="">
+                 </div>
+             </div>
+         </div>
+     </div>
+</div>
+<!-- Banner End -->
+
+<!-- Latest Product Section Begin -->
+<section class="latest-product spad">
+     <div class="container">
+         <div class="row">
+             <div class="col-lg-4 col-md-6">
+                 <div class="latest-product__text">
+                     <h4>Son Çıkanlar</h4>
+                     <div class="latest-product__slider owl-carousel">
+                         <div class="latest-prdouct__slider__item">
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>TYT Soru Bankası</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>TYT Soru Bankası</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>TYT Soru Bankası</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                         </div>
+                         <div class="latest-prdouct__slider__item">
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>TYT Soru Bankası</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>TYT Soru Bankası</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>TYT Soru Bankası</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-4 col-md-6">
+                 <div class="latest-product__text">
+                     <h4>En Popülerler</h4>
+                     <div class="latest-product__slider owl-carousel">
+                         <div class="latest-prdouct__slider__item">
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>AYT Soru Bankası</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>AYT Soru Bankası</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>AYT Soru Bankası</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                         </div>
+                         <div class="latest-prdouct__slider__item">
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>AYT Soru Bankası</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>AYT Soru Bankası</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>AYT Soru Bankası</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-4 col-md-6">
+                 <div class="latest-product__text">
+                     <h4>Son Görüntüledikleriniz</h4>
+                     <div class="latest-product__slider owl-carousel">
+                         <div class="latest-prdouct__slider__item">
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>YKS Alan Denemesi</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>YKS Alan Denemesi</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>YKS Alan Denemesi</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                         </div>
+                         <div class="latest-prdouct__slider__item">
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>YKS Alan Denemesi</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>YKS Alan Denemesi</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                             <a href="#" class="latest-product__item">
+                                 <div class="latest-product__item__pic">
+                                     <img src="{% static 'mainapp/img/bk.png' %}" alt="">
+                                 </div>
+                                 <div class="latest-product__item__text">
+                                     <h6>YKS Alan Denemesi</h6>
+                                     <span>Yakında</span>
+                                 </div>
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</section>
+<!-- Latest Product Section End -->
+
+{% endblock  %}
+
+{% block js_files %}
+     <!-- Js Plugins -->
+    <script src="{% static 'mainapp/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'mainapp/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'mainapp/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'mainapp/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'mainapp/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'mainapp/js/mixitup.min.js' %}"></script>
+    <script src="{% static 'mainapp/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'mainapp/js/main1.js' %}"></script>
+{% endblock  %}

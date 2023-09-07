@@ -31,3 +31,21 @@ class Review(models.Model):
     
     def __str__(self):
         return self.name + "-review"
+    
+
+class Category(models.Model):
+    category_name = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.category_name
+    
+    
+class Source(models.Model):
+    source_name = models.CharField(max_length=100)
+    page_number = models.IntegerField(default=0)
+    is_new = models.BooleanField(default=False)
+    is_popular = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return self.source_name
+    

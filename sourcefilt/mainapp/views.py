@@ -1,6 +1,9 @@
-from django.shortcuts import render
-
-from mainapp.models import Index_Slider, Member, Review, Category, Source
+from django.contrib import messages, auth
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
+from django.shortcuts import redirect, render
+from mainapp.models import Index_Slider, Member, Review, Category, Source, UserInfo
 
 
 # Create your views here.
@@ -24,3 +27,6 @@ def source(request):
 
 def sndhand(request):
     return render(request, "mainapp/sndhand.html")
+
+
+

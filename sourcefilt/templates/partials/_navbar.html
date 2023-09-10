@@ -27,14 +27,33 @@
          <li class="nav-item">
            <a class="nav-link" href="sndhand">Kitap Satışı</a>
          </li>
+
+
        </ul>
-       <div class="quote_btn-container">
-         <form class="form-inline">
-           <button class="btn nav_search-btn" type="submit">
-             <a class="fa fa-user" href="login.html" aria-hidden="true"></a>
-           </button>
-         </form>
-         
-       </div>
+
+       {% if user.is_authenticated %}
+
+        <div class="quote_btn-container">
+          <form class="form-inline">
+            <p class="btn" href="sndhand">Merhaba, {{user.first_name|title}}</p>
+            <button class="btn " type="submit">
+              <a class="" href="{% url 'logout' %}" aria-hidden="true">Oturumu Kapat</a>
+            </button>
+          </form>
+        </div>
+       {% else %}
+        <div class="quote_btn-container">
+          <form class="form-inline">
+            <button class="btn " type="submit">
+              <a class="" href="{% url 'login' %}" aria-hidden="true">Oturum Aç</a>
+            </button>
+            <button class="btn " type="submit">
+              <a class="" href="{% url 'register' %}" aria-hidden="true">Kayıt Ol</a>
+            </button>
+          </form>
+        </div>
+       {% endif %}
+
+       
      </div>
 </nav>

@@ -1,0 +1,108 @@
+{% extends 'auth.html' %}
+{% load static %}
+
+{% block css_files %}
+	<link rel="icon" href="{% static 'account/img/fevicon.png' %}" type="image/gif" />
+	<link rel="stylesheet" type="text/css" href="{% static 'mainapp/vendor/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mainapp/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mainapp/vendor/animate/animate.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mainapp/vendor/css-hamburgers/hamburgers.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mainapp/vendor/select2/select2.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/main.css' %}">
+{% endblock  %}
+
+{% block title %}Main Page{% endblock  %}
+
+{% block content %}
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<a href="{% url 'index' %}"><img src="{% static 'account/img/logo.png' %}" alt="IMG"> </a>
+				</div>
+
+				<form class="login100-form validate-form">
+					<span class="login100-form-title">
+						Parola Sıfırlama
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Bu kısım zorunludur!">
+						<input class="input100" type="text" name="email" placeholder="E-mail adresinizi girin">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					
+					<div class="container-login100-form-btn">
+						<button id="myBtn" class="login100-form-btn">
+							Gönder
+						</button>
+					</div>
+
+				<div class="text-center p-t-136">
+					<a class="txt2" href="login">
+						Giriş Yap
+						<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+					</a>
+				</div>
+
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+				<span class="close">&times;</span>
+				</div>
+				<div class="modal-body">
+				<p> Sıfırlama linki mail adresinize başarılı bir şekilde gönderilmiştir.</p>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+{% endblock  %}
+
+{% block js_files %}
+	<script src="{% static 'account/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'account/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'account/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'account/vendor/select2/select2.min.js' %}"></script>
+	<script src="{% static 'account/vendor/tilt/tilt.jquery.min.js' %}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	<script src="{% static 'account/js/main.js' %}"></script>
+    	<script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+     </script>
+{% endblock  %}

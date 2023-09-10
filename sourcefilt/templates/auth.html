@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     {% block css_files %}
+          <link rel="stylesheet" href="{% static 'css/site.css' %}">
+     {% endblock  %}
+     <title>{% block title %}{% endblock  %} | SourceFilt</title>
+</head>
+<body>
+
+     {% block content %}{% endblock  %}
+
+     
+     <!-- jQery -->
+     <script src="{% static 'mainapp/js/jquery-3.4.1.min.js' %}"></script>
+     <!-- bootstrap js -->
+     <script src="{% static 'mainapp/js/bootstrap.js' %}"></script>
+     <!-- custom js -->
+     <script src="{% static 'mainapp/js/custom.js' %}"></script>
+
+     {% block js_files %}{% endblock  %}
+     
+</body>
+</html>

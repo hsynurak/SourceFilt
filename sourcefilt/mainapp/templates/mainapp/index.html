@@ -18,267 +18,267 @@
 
 
 {% block content %}
-<!-- 
-  For döngüsü kullanılarak slider yapısını oluşturan kodlar azaltılmıştır.
--->
-<!-- slider section -->
-  <section class="slider_section ">
-    <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        {% for index_slider in index_sliders %}
-          <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="detail-box">
-                    <h1>{{ index_slider.title }}</h1>
-                    <h2>{{ index_slider.subtitle }}</h2>
-                    <p>{{ index_slider.description }}</p>
-                    <div class="btn-box">
-                      <a href="{{index_slider.href}}" class="btn-1">Detay</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class=" col-lg-10 mx-auto">
-                      <div class="img-box">
-                        <img src="{{index_slider.image.url}}" alt="">
+  <!-- 
+    For döngüsü kullanılarak slider yapısını oluşturan kodlar azaltılmıştır.
+  -->
+  <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          {% for index_slider in index_sliders %}
+            <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="detail-box">
+                      <h1>{{ index_slider.title }}</h1>
+                      <h2>{{ index_slider.subtitle }}</h2>
+                      <p>{{ index_slider.description }}</p>
+                      <div class="btn-box">
+                        <a href="{{index_slider.href}}" class="btn-1">Detay</a>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-      <div class="carousel_btn-box">
-        <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
-          <i class="fa fa-angle-left" aria-hidden="true"></i>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
-          <i class="fa fa-angle-right" aria-hidden="true"></i>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-  </section>
-<!-- end slider section -->
-
-
-<!-- source section -->
-  <section class="source_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>Kaynak Havuzu</h2>
-      </div>
-    </div>
-    <div class="container ">
-      <div class="row">
-        <div class="col-md-6 col-lg-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="{% static 'mainapp/img/b.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <h4 style="color: #8698DE;">Kitap</h4>
-              <p style="color: #727070;"> Sizin için en verimli kitapların listesi işte burada!</p>
-              <a href="source">Keşfet!<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="{% static 'mainapp/img/mic.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <h4 style="color: #8698DE;">Podcast</h4>
-              <p style="color: #727070;">Kulaklığınızı takın ve podcast dünyasında bilgiyle dolu bir deneyime hazırlanın! </p>
-                 Çok Yakında!
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 ">
-          <div class="box ">
-            <div class="img-box">
-              <img src="{% static 'mainapp/img/video.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <h4 style="color: #8698DE;">Video</h4>
-              <p style="color: #727070;">Eğlenceli ve bilgilendirici videolar ile zamanınızı en iyi şekilde değerlendirin.</p>
-                 Çok Yakında!
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- end source section -->
- 
-
-<!-- about section -->
-  <section class="about_section layout_padding-bottom">
-    <div class="container  ">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>Hakkımızda</h2>
-            </div>
-            <p>Takımımız 2022 yılının Kasım ayında Üsküdar Üniversitesi çatısı
-               altında oluşturulmuştur. Barrelay takımı olarak hedefimiz,
-               Teknofest’e ve çeşitli yarışmalara katılarak farklı alanlarda
-               tecrübeler edinmek ve devamında da başarılar elde etmektir.
-               Daha öncesinde takım üyelerimizin bireysel tecrübe ve başarıları
-               olmasıyla beraber, takımımız ilk yarışma deneyimini; Teknofest
-               2023’te, İnsansız Su Altı Sistemleri Yarışması kategorisine
-               katılarak yaşamıştır. Yapacağımız tüm çalışmalar ile Milli Teknoloji
-               Hamlesi ’ne katkı sağlamayı ve ülkemizin daha iyi bir geleceğe
-               sahip olması için çalışmayı hedeflemekteyiz. 
-            </p>
-            <a href="about">Bizi Tanıyın!</a>
-          </div>
-        </div>
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="{% static 'mainapp/img/logo.png' %}" alt="logo" width="400" height="400" align="right">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
- 
-<!-- end about section -->
- 
- 
-<!-- second hand section -->
-  <section class="sndhand_section">
-    <div class="container ">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="img-box">
-            <img src="{% static 'mainapp/img/kit.png' %}" alt="">
-             <!--div class="play_btn">
-               <button>
-                 <i class="fa fa-play" aria-hidden="true"></i>
-               </button>
-             </div-->
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>Kitap Satışı</h2>
-              <p>Okumak isteyenler ve okurlar arasındaki köprü SourceFilt! Kitaplarınızı satın, yeni kitaplar edinin. Soru bankanızı kullanmadınız mı? Şimdi satmanın tam sırası. Aradığınız kitabı filtreleyerek uygun fiyata ikinci el satın alabilir ya da dilediğiniz kitabı satabilirsiniz.</p>
-            </div>
-            <a href="sndhand">Çok Yakında!</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
- 
-<!-- end second hand section -->
- 
-   
-<!-- client section -->
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-      <section class="client_section ">
-        <div class="container">
-          <div class="heading_container heading_center">
-            <h2>Kullanıcı Yorumları</h2>
-          </div>
-        </div>
-        <div class="container px-0">
-          <div id="customCarousel2" class="carousel  slide" data-ride="carousel">
-            <div class="carousel-inner">
-              {% for review in reviews %}
-                <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
-                  <div class="container">
+                  <div class="col-md-6">
                     <div class="row">
-                      <div class="col-md-10 mx-auto">
-                        <div class="box">
-                          <div class="img-box">
-                            <img src="{% static 'mainapp/img/M.png' %}" alt="">
-                          </div>
-                          <div class="detail-box">
-                            <div class="client_info">
-                              <div class="client_name">
-                                <h5>{{review.name}}</h5>
-                              </div>
-                              <i class="fa fa-quote-left" aria-hidden="true"></i>
-                            </div>
-                            <p>{{review.review}}</p>
-                          </div>
+                      <div class=" col-lg-10 mx-auto">
+                        <div class="img-box">
+                          <img src="{{index_slider.image.url}}" alt="">
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              {% endfor %}
-            <div class="carousel_btn-box">
-              <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
-                <i class="fa fa-angle-left" aria-hidden="true"></i>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <span class="sr-only">Next</span>
-              </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="carousel_btn-box">
+          <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  <!-- end slider section -->
+
+
+  <!-- source section -->
+    <section class="source_section layout_padding">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>Kaynak Havuzu</h2>
+        </div>
+      </div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'mainapp/img/b.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h4 style="color: #8698DE;">Kitap</h4>
+                <p style="color: #727070;"> Sizin için en verimli kitapların listesi işte burada!</p>
+                <a href="source">Keşfet!<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'mainapp/img/mic.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h4 style="color: #8698DE;">Podcast</h4>
+                <p style="color: #727070;">Kulaklığınızı takın ve podcast dünyasında bilgiyle dolu bir deneyime hazırlanın! </p>
+                  Çok Yakında!
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'mainapp/img/video.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h4 style="color: #8698DE;">Video</h4>
+                <p style="color: #727070;">Eğlenceli ve bilgilendirici videolar ile zamanınızı en iyi şekilde değerlendirin.</p>
+                  Çok Yakında!
+              </div>
             </div>
           </div>
         </div>
-      </section>
-<!-- end client section -->
-
-<!-- contact section -->
-  <br>
-  <br>
-  <br>
-  <section class="contact_section layout_padding-bottom">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Bize Ulaşabilirsiniz!
-        </h2>
       </div>
-      <div class="row">
-        <div class="col-md-8 col-lg-6 mx-auto">
-          <div class="form_container">
-            <form action="">
-              <div>
-                <input type="text" placeholder="İsim" />
+    </section>
+  <!-- end source section -->
+  
+
+  <!-- about section -->
+    <section class="about_section layout_padding-bottom">
+      <div class="container  ">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>Hakkımızda</h2>
               </div>
-              <div>
-                <input type="email" placeholder="E-mail Adresi" />
-              </div>
-              <div>
-                <input type="text" placeholder="Telefon Numarası" />
-              </div>
-              <div>
-                <input type="text" class="message-box" placeholder="Mesaj" />
-              </div>
-              <div class="btn_box ">
-                <button>
-                  GÖNDER
-                </button>
-              </div>
-            </form>
+              <p>Takımımız 2022 yılının Kasım ayında Üsküdar Üniversitesi çatısı
+                altında oluşturulmuştur. Barrelay takımı olarak hedefimiz,
+                Teknofest’e ve çeşitli yarışmalara katılarak farklı alanlarda
+                tecrübeler edinmek ve devamında da başarılar elde etmektir.
+                Daha öncesinde takım üyelerimizin bireysel tecrübe ve başarıları
+                olmasıyla beraber, takımımız ilk yarışma deneyimini; Teknofest
+                2023’te, İnsansız Su Altı Sistemleri Yarışması kategorisine
+                katılarak yaşamıştır. Yapacağımız tüm çalışmalar ile Milli Teknoloji
+                Hamlesi ’ne katkı sağlamayı ve ülkemizin daha iyi bir geleceğe
+                sahip olması için çalışmayı hedeflemekteyiz. 
+              </p>
+              <a href="about">Bizi Tanıyın!</a>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="img-box">
+              <img src="{% static 'mainapp/img/logo.png' %}" alt="logo" width="400" height="400" align="right">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-<!-- end contact section -->
+    </section>
+  
+  <!-- end about section -->
+  
+  
+  <!-- second hand section -->
+    <section class="sndhand_section">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="img-box">
+              <img src="{% static 'mainapp/img/kit.png' %}" alt="">
+              <!--div class="play_btn">
+                <button>
+                  <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
+              </div-->
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>Kitap Satışı</h2>
+                <p>Okumak isteyenler ve okurlar arasındaki köprü SourceFilt! Kitaplarınızı satın, yeni kitaplar edinin. Soru bankanızı kullanmadınız mı? Şimdi satmanın tam sırası. Aradığınız kitabı filtreleyerek uygun fiyata ikinci el satın alabilir ya da dilediğiniz kitabı satabilirsiniz.</p>
+              </div>
+              <a href="sndhand">Çok Yakında!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  <!-- end second hand section -->
+  
+    
+  <!-- client section -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <section class="client_section ">
+          <div class="container">
+            <div class="heading_container heading_center">
+              <h2>Kullanıcı Yorumları</h2>
+            </div>
+          </div>
+          <div class="container px-0">
+            <div id="customCarousel2" class="carousel  slide" data-ride="carousel">
+              <div class="carousel-inner">
+                {% for review in reviews %}
+                  <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-10 mx-auto">
+                          <div class="box">
+                            <div class="img-box">
+                              <img src="{% static 'mainapp/img/M.png' %}" alt="">
+                            </div>
+                            <div class="detail-box">
+                              <div class="client_info">
+                                <div class="client_name">
+                                  <h5>{{review.name}}</h5>
+                                </div>
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                              </div>
+                              <p>{{review.review}}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              <div class="carousel_btn-box">
+                <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+  <!-- end client section -->
+
+  <!-- contact section -->
+    <br>
+    <br>
+    <br>
+    <section class="contact_section layout_padding-bottom">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>
+            Bize Ulaşabilirsiniz!
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-lg-6 mx-auto">
+            <div class="form_container">
+              <form action="">
+                <div>
+                  <input type="text" placeholder="İsim" />
+                </div>
+                <div>
+                  <input type="email" placeholder="E-mail Adresi" />
+                </div>
+                <div>
+                  <input type="text" placeholder="Telefon Numarası" />
+                </div>
+                <div>
+                  <input type="text" class="message-box" placeholder="Mesaj" />
+                </div>
+                <div class="btn_box ">
+                  <button>
+                    GÖNDER
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- end contact section -->
  
 {% endblock  %}
 

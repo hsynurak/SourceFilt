@@ -28,5 +28,7 @@ def source(request):
 def sndhand(request):
     return render(request, "mainapp/sndhand.html")
 
+def details(request):
+    return render(request, "mainapp/details.html")
 
 

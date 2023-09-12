@@ -4,9 +4,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     {% block css_files %}{% endblock  %}
+     {% block css_files %}
+          <!-- Css Styles -->
+          <link rel="stylesheet" href="{% static 'mainapp/css/bootstrap.min.css' %}" type="text/css">
+          <link rel="stylesheet" href="{% static 'mainapp/css/font-awesome1.min.css' %}" type="text/css">
+          <link rel="stylesheet" href="{% static 'mainapp/css/elegant-icons.css' %}" type="text/css">
+          <link rel="stylesheet" href="{% static 'mainapp/css/nice-select.css' %}" type="text/css">
+          <link rel="stylesheet" href="{% static 'mainapp/css/jquery-ui.min.css' %}" type="text/css">
+          <link rel="stylesheet" href="{% static 'mainapp/css/owl.carousel.min.css' %}" type="text/css">
+          <link rel="stylesheet" href="{% static 'mainapp/css/slicknav.min.css' %}" type="text/css">
+          <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}" type="text/css">
+          <link rel="stylesheet" href="{% static 'mainapp/css/style1.css' %}" type="text/css">
+     {% endblock  %}
      <title>{% block title %}{% endblock  %} | SourceFilt</title>
 </head>
 <body>

@@ -951,9 +951,7 @@ body,
   color: #8698DE;
 }
 
-/* detail section */
-/* details*/
-
+/* detail section  */
 .pd-wrap {
 	padding: 40px 0;
 	font-family: 'Poppins', sans-serif;
@@ -967,7 +965,7 @@ body,
     font-size: 12px;
     display: block;
     font-weight: 600;
-    color: #2e9ca1;
+    color: #8698DE;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -992,7 +990,7 @@ body,
 .quote {
 	position: absolute;
     top: -23px;
-    color: #2e9da1;
+    color: #8698DE;
     font-size: 27px;
 }
 .name {
@@ -1121,7 +1119,7 @@ body,
 .product-count .qtyplus {
 	width: 34px;
     height: 34px;
-    background: #212529;
+    background: #8698DE;
     text-align: center;
     font-size: 19px;
     line-height: 36px;
@@ -1140,18 +1138,18 @@ body,
 }
 .round-black-btn {
 	border-radius: 4px;
-    background: #212529;
+    background: #8698DE;
     color: #fff;
     padding: 7px 45px;
     display: inline-block;
     margin-top: 20px;
-    border: solid 2px #212529; 
+    border: solid 2px #8698DE; 
     transition: all 0.5s ease-in-out 0s;
 }
 .round-black-btn:hover,
 .round-black-btn:focus {
 	background: transparent;
-	color: #212529;
+	color: #8698DE;
 	text-decoration: none;
 }
 
@@ -1159,7 +1157,7 @@ body,
 	margin-top: 25px; 
 }
 .product-info-tabs .nav-tabs {
-	border-bottom: 2px solid #d8d8d8;
+	border-bottom: 2px solid #8ca5ff;
 }
 .product-info-tabs .nav-tabs .nav-item {
 	margin-bottom: 0;
@@ -1176,7 +1174,7 @@ body,
 .product-info-tabs .nav-tabs .nav-link.active, 
 .product-info-tabs .nav-tabs .nav-link.active:hover {
 	border: none; 
-	border-bottom: 2px solid #d8d8d8;
+	border-bottom: 2px solid #8698DE;
 	font-weight: bold;
 }
 .product-info-tabs .tab-content .tab-pane {
@@ -1217,6 +1215,8 @@ body,
 	text-transform: uppercase;
 	cursor: pointer;
 }
+
+/* detail section end */
 
 /* info section */
 .info_section {

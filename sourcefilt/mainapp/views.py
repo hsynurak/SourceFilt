@@ -1,9 +1,11 @@
+from django.core.mail import EmailMessage
 from django.contrib import messages, auth
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from mainapp.models import Index_Slider, Member, Review, Category, Source, UserInfo
+from .forms import ContactForm
 
 
 # Create your views here.
@@ -31,4 +33,17 @@ def sndhand(request):
 def details(request):
     return render(request, "mainapp/details.html")
 
-
+def contact(request):
+     if request.method == "POST":
+          form = ContactForm(request.POST)
+          if form.is_valid():
+               name = form.cleaned_data["name"]
+               email = form.cleaned_data["email"]
+               phone = form.cleaned_data["phone"]
+               message = form.cleaned_data["message"]
+               form.save()
+               messages.success(request, "Mesajın başarı ile alındı.")
+               return redirect("contact")
+     else:
+          form = ContactForm()
+     return render(request, "mainapp/contact.html", {"form": form})

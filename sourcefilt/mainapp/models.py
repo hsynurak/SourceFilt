@@ -66,3 +66,13 @@ class Source(models.Model):
     #    self.slug = self.source_name.replace(" ", "-").lower()
     #    # self.slug = slugify(self.source_name) 
     #    super(Source, self).save(*args, **kwargs)
+    
+
+class Contact(models.Model):
+    name = models.CharField(max_length=30)
+    email = models.EmailField(max_length=50)
+    phone = models.CharField(max_length=20)
+    message = models.TextField()
+    
+    def __str__(self):
+        return self.name 

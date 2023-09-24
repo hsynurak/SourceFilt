@@ -45,27 +45,92 @@ class Review(models.Model):
         return self.name + "-review"
     
 
-class Category(models.Model):
-    category_name = models.CharField(max_length=50)
+class Grade(models.Model):
+    grade = models.CharField(max_length=50)
     
     def __str__(self):
-        return self.category_name
+        return self.grade
     
+class Kitapsec(models.Model):
+    current_price = models.FloatField(null=True)
+    original_price = models.FloatField(null=True)
+    quantity = models.IntegerField(null=True)
+    score = models.FloatField(null=True)
+    link = models.CharField(max_length=100, null=True)
+    image = models.ImageField(upload_to='books', null=True)
     
-class Source(models.Model):
-    source_name = models.CharField(max_length=100)
+class Islerkitap(models.Model):
+    current_price = models.FloatField(null=True)
+    original_price = models.FloatField(null=True)
+    quantity = models.IntegerField(null=True)
+    score = models.FloatField(null=True)
+    link = models.CharField(max_length=100, null=True)
+    image = models.ImageField(upload_to='books', null=True)
+    
+class Kitapyurdu(models.Model):
+    current_price = models.FloatField(null=True)
+    original_price = models.FloatField(null=True)
+    quantity = models.IntegerField(null=True)
+    score = models.FloatField(null=True)
+    link = models.CharField(max_length=100, null=True)
+    image = models.ImageField(upload_to='books', null=True)
+    
+class Bkmkitap(models.Model):
+    current_price = models.FloatField(null=True)
+    original_price = models.FloatField(null=True)
+    quantity = models.IntegerField(null=True)
+    score = models.FloatField(null=True)
+    link = models.CharField(max_length=100, null=True)
+    image = models.ImageField(upload_to='books', null=True)
+    
+class Isemkitap(models.Model):
+    current_price = models.FloatField(null=True)
+    original_price = models.FloatField(null=True)
+    quantity = models.IntegerField(null=True)
+    score = models.FloatField(null=True)
+    link = models.CharField(max_length=100, null=True)
+    image = models.ImageField(upload_to='books', null=True)
+    
+class Sadecekitap(models.Model):
+    current_price = models.FloatField(null=True)
+    original_price = models.FloatField(null=True)
+    quantity = models.IntegerField(null=True)
+    score = models.FloatField(null=True)
+    link = models.CharField(max_length=100, null=True)
+    image = models.ImageField(upload_to='books', null=True)
+    
+class Kitapsepeti(models.Model):
+    current_price = models.FloatField(null=True)
+    original_price = models.FloatField(null=True)
+    quantity = models.IntegerField(null=True)
+    score = models.FloatField(null=True)
+    link = models.CharField(max_length=100, null=True)
+    image = models.ImageField(upload_to='books', null=True)
+        
+class Book(models.Model):
+    name = models.CharField(max_length=100, default="source")
+    publisher = models.CharField(max_length=100, default="source")
     page_number = models.IntegerField(default=0)
     is_new = models.BooleanField(default=False)
     is_popular = models.BooleanField(default=False)
-    #slug = models.SlugField(max_length=100, default="source")
+    category = models.CharField(max_length=100, default="source")
+    grade = models.CharField(max_length=100, default="source")
+    year = models.IntegerField(default=2023)
+    type = models.CharField(max_length=100, null=True)
+    slug = models.SlugField(max_length=100, default="source")
+    created_at = models.DateTimeField(null=True)
+    kitapsec = models.OneToOneField(Kitapsec, on_delete=models.CASCADE, null=True)
+    islerkitap = models.OneToOneField(Islerkitap, on_delete=models.CASCADE, null=True)
+    kitapyurdu = models.OneToOneField(Kitapyurdu, on_delete=models.CASCADE, null=True)
+    bkmkitap = models.OneToOneField(Bkmkitap, on_delete=models.CASCADE, null=True)
+    isemkitap = models.OneToOneField(Isemkitap, on_delete=models.CASCADE, null=True)
+    sadecekitap = models.OneToOneField(Sadecekitap, on_delete=models.CASCADE, null=True)
+    kitapsepeti = models.OneToOneField(Kitapsepeti, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return self.source_name
     
-    #def save(self, *args, **kwargs):
-    #    self.slug = self.source_name.replace(" ", "-").lower()
-    #    # self.slug = slugify(self.source_name) 
-    #    super(Source, self).save(*args, **kwargs)
+
     
 
 class Contact(models.Model):

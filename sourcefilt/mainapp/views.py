@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
-from mainapp.models import Index_Slider, Member, Review, Category, Source, UserInfo
+from mainapp.models import Index_Slider, Member, Review, Grade, Book, UserInfo
 from .forms import ContactForm
 
 
@@ -22,9 +22,9 @@ def about(request):
      return render(request, "mainapp/about.html", context)
 
 def source(request):
-     categories = Category.objects.all()
-     sources = Source.objects.all()
-     context = {"categories": categories , "sources": sources}
+     grades = Grade.objects.all()
+     books = Book.objects.all()
+     context = {"categories": grades , "books": books}
      return render(request, "mainapp/source.html", context)
 
 def sndhand(request):

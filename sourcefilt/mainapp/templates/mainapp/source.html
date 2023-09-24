@@ -43,8 +43,8 @@
                             <span>Kategoriler</span>
                         </div>
                         <ul>
-                            {% for category in categories %}
-                                <li><a href="#">{{category.category_name}}</a></li>
+                            {% for grade in grades %}
+                                <li><a href="#">{{grade}}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -72,10 +72,10 @@
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
-                    {% for category in categories %}
+                    {% for grade in grades %}
                         <div class="col-lg-3">
                             <div class="categories__item set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
-                                <h5><a href="#">{{category.category_name}}</a></h5>
+                                <h5><a href="#">{{grade.grade}}</a></h5>
                             </div>
                         </div>
                     {% endfor %}
@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="row featured__filter">
-                {% for source in sources %}
+                {% for book in books %}
                     <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                         <div class="featured__item">
                             <div class="featured__item__pic set-bg" data-setbg="{% static 'mainapp/img/bk.png' %}">
@@ -161,14 +161,14 @@
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
 
-                                {% for source in sources %}
-                                    {% if source.is_new == True %}
+                                {% for book in books %}
+                                    {% if book.is_new == True %}
                                         <a href="#" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="{% static 'mainapp/img/bk.png' %}" alt="">
                                             </div>
                                             <div class="latest-product__item__text">
-                                                <h6>{{source.source_name}}</h6>
+                                                <h6>{{book.name}}</h6>
                                                 <span>Yakında</span>
                                             </div>
                                         </a>
@@ -215,14 +215,14 @@
                         <h4>En Popülerler</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
-                                {% for source in sources %}
-                                    {% if source.is_popular == True %}
+                                {% for book in books %}
+                                    {% if book.is_popular == True %}
                                         <a href="#" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="{% static 'mainapp/img/bk.png' %}" alt="">
                                             </div>
                                             <div class="latest-product__item__text">
-                                                <h6>{{source.source_name}}</h6>
+                                                <h6>{{book.name}}</h6>
                                                 <span>Yakında</span>
                                             </div>
                                         </a>

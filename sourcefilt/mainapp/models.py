@@ -110,10 +110,10 @@ class Kitapsepeti(models.Model):
 class Book(models.Model):
     name = models.CharField(max_length=100, default="source")
     publisher = models.CharField(max_length=100, default="source")
-    page_number = models.IntegerField(default=0)
+    number_of_page = models.IntegerField(default=0)
     is_new = models.BooleanField(default=False)
     is_popular = models.BooleanField(default=False)
-    category = models.CharField(max_length=100, default="source")
+    subject = models.CharField(max_length=100, default="source")
     grade = models.CharField(max_length=100, default="source")
     year = models.IntegerField(default=2023)
     type = models.CharField(max_length=100, null=True)

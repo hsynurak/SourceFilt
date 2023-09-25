@@ -81,7 +81,7 @@ WSGI_APPLICATION = "sourcefilt.wsgi.application"
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'test',
+		'NAME': 'sourcefilt',
 		'USER': 'root',
 		'PASSWORD': 'admin123.',
 		'HOST':'localhost',

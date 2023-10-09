@@ -8,4 +8,11 @@ commit-3: Kaynak havuzu sayfasını veritabanı üzerinden çekilecek olan veril
 
 
 
-Notlar /n
+Notlar:
+account/views.py içinde "login_request" fonksiyonu ile login kontrolü sağlanır
+
+account/views.py içinde "register_request" fonksiyonu ile yeni kullanıcı oluşturulur
+
+account/views.py içinde "logout_request" fonksiyonu ile logout işlemi devreye sokulur
+
+mainapp/views.py içinde "contact" fonksiyonu ile girilen bilgiler veri tabanına kayıt edilir

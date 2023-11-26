@@ -1,0 +1,3 @@
+source_env 
+.env
+__pycache__

@@ -52,72 +52,156 @@ class Grade(models.Model):
         return self.grade
     
 class Kitapsec(models.Model):
+    name = models.CharField(max_length=500, default="source")
+    publisher = models.CharField(max_length=500, default="source")
+    number_of_page = models.IntegerField(default=0, null=True)
+    #is_new = models.BooleanField(default=None, null=True)
+    #is_popular = models.BooleanField(default=None, null=True)
+    subject = models.CharField(max_length=500, default="source")
+    grade = models.CharField(max_length=500, default="source")
+    year = models.IntegerField(default=2023, null=True)
+    type = models.CharField(max_length=500, null=True)
     current_price = models.FloatField(null=True)
     original_price = models.FloatField(null=True)
     quantity = models.IntegerField(null=True)
     score = models.FloatField(null=True)
-    link = models.CharField(max_length=100, null=True)
-    image = models.ImageField(upload_to='books', null=True)
+    link = models.CharField(max_length=500, null=True)
+    image = models.CharField(max_length=500, null=True)
+    
+    class Meta:
+        db_table = "kitapsec"
     
 class Islerkitap(models.Model):
+    name = models.CharField(max_length=500, default="source")
+    publisher = models.CharField(max_length=500, default="source")
+    number_of_page = models.IntegerField(default=0, null=True)
+    #is_new = models.BooleanField(default=None, null=True)
+    #is_popular = models.BooleanField(default=None, null=True)
+    subject = models.CharField(max_length=500, default="source")
+    grade = models.CharField(max_length=500, default="source")
+    year = models.IntegerField(default=2023,null=True)
+    type = models.CharField(max_length=500, null=True)
     current_price = models.FloatField(null=True)
     original_price = models.FloatField(null=True)
     quantity = models.IntegerField(null=True)
     score = models.FloatField(null=True)
-    link = models.CharField(max_length=100, null=True)
-    image = models.ImageField(upload_to='books', null=True)
+    link = models.CharField(max_length=500, null=True)
+    image = models.CharField(max_length=500, null=True)
+    
+    class Meta:
+        db_table = "islerkitap"
     
 class Kitapyurdu(models.Model):
+    name = models.CharField(max_length=500, default="source")
+    publisher = models.CharField(max_length=500, default="source")
+    number_of_page = models.IntegerField(default=0, null=True)
+    #is_new = models.BooleanField(default=None, null=True)
+    #is_popular = models.BooleanField(default=None, null=True)
+    subject = models.CharField(max_length=500, default="source")
+    grade = models.CharField(max_length=500, default="source")
+    year = models.IntegerField(default=2023, null=True)
+    type = models.CharField(max_length=500, null=True)
     current_price = models.FloatField(null=True)
     original_price = models.FloatField(null=True)
     quantity = models.IntegerField(null=True)
     score = models.FloatField(null=True)
-    link = models.CharField(max_length=100, null=True)
-    image = models.ImageField(upload_to='books', null=True)
+    link = models.CharField(max_length=500, null=True)
+    image = models.CharField(max_length=500, null=True)
+    
+    class Meta:
+        db_table = "kitapyurdu"
     
 class Bkmkitap(models.Model):
+    name = models.CharField(max_length=500, default="source")
+    publisher = models.CharField(max_length=500, default="source")
+    number_of_page = models.IntegerField(default=0, null=True)
+    #is_new = models.BooleanField(default=None, null=True)
+    #is_popular = models.BooleanField(default=None, null=True)
+    subject = models.CharField(max_length=500, default="source")
+    grade = models.CharField(max_length=500, default="source")
+    year = models.IntegerField(default=2023, null=True)
+    type = models.CharField(max_length=500, null=True)
     current_price = models.FloatField(null=True)
     original_price = models.FloatField(null=True)
     quantity = models.IntegerField(null=True)
     score = models.FloatField(null=True)
-    link = models.CharField(max_length=100, null=True)
-    image = models.ImageField(upload_to='books', null=True)
+    link = models.CharField(max_length=500, null=True)
+    image = models.CharField(max_length=500, null=True)
+    
+    class Meta:
+        db_table = "bkmkitap"
     
 class Isemkitap(models.Model):
+    name = models.CharField(max_length=500, default="source")
+    publisher = models.CharField(max_length=500, default="source")
+    number_of_page = models.IntegerField(default=0, null=True)
+    #is_new = models.BooleanField(default=None, null=True)
+    #is_popular = models.BooleanField(default=None, null=True)
+    subject = models.CharField(max_length=500, default="source")
+    grade = models.CharField(max_length=500, default="source")
+    year = models.IntegerField(default=2023, null=True)
+    type = models.CharField(max_length=500, null=True)
     current_price = models.FloatField(null=True)
     original_price = models.FloatField(null=True)
     quantity = models.IntegerField(null=True)
     score = models.FloatField(null=True)
-    link = models.CharField(max_length=100, null=True)
-    image = models.ImageField(upload_to='books', null=True)
+    link = models.CharField(max_length=500, null=True)
+    image = models.CharField(max_length=500, null=True)
+    
+    class Meta:
+        db_table = "isemkitap"
     
 class Sadecekitap(models.Model):
+    name = models.CharField(max_length=500, default="source")
+    publisher = models.CharField(max_length=500, default="source")
+    number_of_page = models.IntegerField(default=0, null=True)
+    #is_new = models.BooleanField(default=None, null=True)
+    #is_popular = models.BooleanField(default=None, null=True)
+    subject = models.CharField(max_length=500, default="source")
+    grade = models.CharField(max_length=500, default="source")
+    year = models.IntegerField(default=2023, null=True)
+    type = models.CharField(max_length=500, null=True)
     current_price = models.FloatField(null=True)
     original_price = models.FloatField(null=True)
     quantity = models.IntegerField(null=True)
     score = models.FloatField(null=True)
-    link = models.CharField(max_length=100, null=True)
-    image = models.ImageField(upload_to='books', null=True)
+    link = models.CharField(max_length=500, null=True)
+    image = models.CharField(max_length=500, null=True)
+    
+    class Meta:
+        db_table = "sadecekitap"
     
 class Kitapsepeti(models.Model):
+    name = models.CharField(max_length=500, default="source")
+    publisher = models.CharField(max_length=500, default="source")
+    number_of_page = models.IntegerField(default=0, null=True)
+    #is_new = models.BooleanField(default=None, null=True)
+    #is_popular = models.BooleanField(default=None, null=True)
+    subject = models.CharField(max_length=500, default="source")
+    grade = models.CharField(max_length=500, default="source")
+    year = models.IntegerField(default=2023, null=True)
+    type = models.CharField(max_length=500, null=True)
     current_price = models.FloatField(null=True)
     original_price = models.FloatField(null=True)
     quantity = models.IntegerField(null=True)
     score = models.FloatField(null=True)
-    link = models.CharField(max_length=100, null=True)
-    image = models.ImageField(upload_to='books', null=True)
+    link = models.CharField(max_length=500, null=True)
+    image = models.CharField(max_length=500, null=True)
+    
+    class Meta:
+        db_table = "kitapsepeti"
         
 class Book(models.Model):
-    name = models.CharField(max_length=100, default="source")
-    publisher = models.CharField(max_length=100, default="source")
-    number_of_page = models.IntegerField(default=0)
-    is_new = models.BooleanField(default=False)
-    is_popular = models.BooleanField(default=False)
-    subject = models.CharField(max_length=100, default="source")
-    grade = models.CharField(max_length=100, default="source")
-    year = models.IntegerField(default=2023)
-    type = models.CharField(max_length=100, null=True)
-    slug = models.SlugField(max_length=100, default="source")
+    name = models.CharField(max_length=500, default="source")
+    publisher = models.CharField(max_length=500, default="source")
+    number_of_page = models.IntegerField(default=0, null=True)
+    #is_new = models.BooleanField(default=None, null=True)
+    #is_popular = models.BooleanField(default=None, null=True)
+    subject = models.CharField(max_length=500, default="source")
+    grade = models.CharField(max_length=500, default="source")
+    year = models.IntegerField(default=2023, null=True)
+    type = models.CharField(max_length=500, null=True)
+    slug = models.SlugField(max_length=500, default="source")
     created_at = models.DateTimeField(null=True)
     kitapsec = models.OneToOneField(Kitapsec, on_delete=models.CASCADE, null=True)
     islerkitap = models.OneToOneField(Islerkitap, on_delete=models.CASCADE, null=True)
@@ -128,7 +212,10 @@ class Book(models.Model):
     kitapsepeti = models.OneToOneField(Kitapsepeti, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
-        return self.source_name
+        return self.name
+    
+    class Meta:
+        db_table = "book"
     
 
     

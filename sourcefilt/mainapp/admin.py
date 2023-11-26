@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Index_Slider, Member, Review, Grade, Book, UserInfo, Contact
+from .models import Index_Slider, Member, Review, Grade, Book, UserInfo, Contact, Bkmkitap
 
 # Register your models here.
 
@@ -10,4 +10,5 @@ admin.site.register(Review)
 admin.site.register(Grade)
 admin.site.register(Book)
 admin.site.register(Contact)
+admin.site.register(Bkmkitap)
 #admin.site.register(UserInfo)

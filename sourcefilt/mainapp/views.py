@@ -24,7 +24,7 @@ def about(request):
 def source(request):
      grades = Grade.objects.all()
      books = Book.objects.all()
-     context = {"categories": grades , "books": books}
+     context = {"grades": grades , "books": books}
      return render(request, "mainapp/source.html", context)
 
 def sndhand(request):

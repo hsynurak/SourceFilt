@@ -1,2 +1,2 @@
 # SourceFilt
- A website for individuals seeking various types of resources such as books, videos, and podcasts, an intelligent filtering system is employed to save time.
+Discover a website with books, videos, and podcasts, featuring an intelligent filtering system for personalized recommendations. Save time and find relevant content quickly and efficiently.

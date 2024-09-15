@@ -1,0 +1,72 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SourceFilt</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+	<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						koyumavi: '#014262',
+						acikmavi: '#225D7A',
+					},
+				}
+			}
+		}
+	</script>
+        <style>
+            body{
+                    line-height: 1.5;
+                    font-family: 'Montserrat', sans-serif;
+                }
+        </style>
+</head>
+<body class="font-sans">
+    <div class="bg-white">
+        <header class="bg-[#FCF8F1] bg-opacity-5">
+            <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+                <div class="flex items-center justify-between h-16 lg:h-20  border-b-2 border-koyumavi">
+                    <div class="flex-shrink-0">
+                        <a href="/" title="anasayfa" class="flex">
+                            <h1 class="font-bold text-2xl text-koyumavi">
+                                sourceFilt
+                            </h1>
+                        </a>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <button id="menuButton" type="button" class="relative inline-flex text-black transition-all duration-200 rounded-md lg:hidden">
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="#014262" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+                            </svg>                          
+                        </button>
+                        <ul id="menuList" class="mt-6 bg-white shadow-lg rounded-md absolute z-10 right-4 border hidden">
+                            <li><a href="{% url 'homepage' %}" class="block text-black hover:bg-gray-100 hover:rounded-t-md px-4 py-2">Ana Sayfa</a></li>
+                            <li><a href="{% url 'sources' %}" class="block text-black hover:bg-gray-100 hover:rounded-b-md px-4 py-2">Kaynak Havuzu</a></li>
+                        </ul>
+                    </div>
+                    <div class="hidden lg:flex lg:items-center lg:justify-center lg:space-x-20">
+                        <a href="{% url 'homepage' %}" title="" class="text-base text-koyumavi transition-all duration-200 hover:text-opacity-80"> Ana Sayfa </a>
+                        <a href="{% url 'sources' %}" title="" class="text-base text-koyumavi transition-all duration-200 hover:text-opacity-80"> Kaynak Havuzu </a>
+                        <!--<a href="#" title="" class="text-base text-koyumavi transition-all duration-200 hover:text-opacity-80"> Dashboard </a>-->
+                    </div>
+                    <!--<div>
+                        <a href="#" title="" class="text-base text-koyumavi transition-all duration-200 hover:text-opacity-80 px-8"> Giriş Yap </a>
+                        <a href="#" title="" class="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 hover:bg-acikmavi hover:text-white focus:text-white focus:bg-acikmavi font-semibold text-white bg-koyumavi rounded-full" role="button"> Kaydol </a>
+                    </div>-->
+                </div>
+            </div>
+        </header>
+
+        <script>
+            const menuButton = document.getElementById('menuButton');
+            const menuList = document.getElementById('menuList');
+        
+            menuButton.addEventListener('click', () => {
+                menuList.classList.toggle('hidden');
+            });
+        </script>

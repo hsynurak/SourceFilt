@@ -1,0 +1,192 @@
+{% load static %}
+{% include 'components/header.html' %}
+
+<section class="lg:py-32 pt-8 pb-12 max-w-7xl flex justify-center items-center mx-auto">
+  <div class="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <img src="{% static 'img/banner.svg' %}">
+  </div>
+</section>
+
+<section class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:pt-32">
+  <div class="flex flex-row gap-8 md:justify-end md:pb-10">
+    <div class="flex flex-col gap-2">
+      <button id="toggleButton" class="relative flex flex-row border border-koyumavi focus:border-2 text-gray-800 px-12 py-2 rounded-full focus:outline-none">
+        <span>
+          <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="#225D7A" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 20V10m0 10-3-3m3 3 3-3m5-13v10m0-10 3 3m-3-3-3 3"/>
+          </svg>
+        </span>
+        Sırala
+      </button>
+      <ul id="toggleList" class="z-10 absolute border text-gray-800 pr-8 py-2 rounded-lg shadow-lg focus:outline-none p-4 mt-14 bg-white hidden">
+        <a href="#" class="hover:underline hover:underline-offset-1"><li onclick="sortBooks('most_preferred')">En çok tercih edilen</li></a>
+        <a href="#" class="hover:underline hover:underline-offset-1"><li onclick="sortBooks('least_preferred')">En az tercih edilen</li></a>
+        <a href="#" class="hover:underline hover:underline-offset-1"><li onclick="sortBooks('cheapest')">En ucuz</li></a>
+        <a href="#" class="hover:underline hover:underline-offset-1"><li onclick="sortBooks('most_expensive')">En pahalı</li></a>
+      </ul>
+    </div>
+    <div class="flex flex-col gap-2 block md:hidden">
+      <button id="kategoriButton" class="relative flex flex-row border border-koyumavi focus:border-2 text-gray-800 px-10 py-2 rounded-full focus:outline-none">
+        <span>
+          <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="#225D7A" stroke-linecap="round" stroke-width="2" d="M18.796 4H5.204a1 1 0 0 0-.753 1.659l5.302 6.058a1 1 0 0 1 .247.659v4.874a.5.5 0 0 0 .2.4l3 2.25a.5.5 0 0 0 .8-.4v-7.124a1 1 0 0 1 .247-.659l5.302-6.059c.566-.646.106-1.658-.753-1.658Z"/>
+          </svg>
+        </span>
+        Kategori
+      </button>
+      <div id="kategoriList" class="z-10 w-40 absolute border text-gray-800 pr-14 py-2 rounded-lg shadow-lg focus:outline-none p-4 mt-14 bg-white hidden">
+        <div>
+          <button class="kategori-button text-lg font-semibold text-gray-700 mb-2 w-full text-left flex items-center gap-2">
+            TYT
+            <span>
+              <svg fill="#9e9e9e" height="16px" width="16px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve" transform="rotate(90)">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.66"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z"></path>
+                </g>
+              </svg>
+            </span>
+          </button>
+          
+          <ul class="kategori-list hidden">
+            {% for kitap in tyt_kitaplar %}
+              <li class="pl-4 hover:underline hover:underline-offset-1">
+                <a href="?sinav_turu=TYT&ders={{ kitap.ders }}">{{ kitap.ders }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <button class="kategori-button text-lg font-semibold text-gray-700 mb-2 w-full text-left flex items-center gap-2">
+            AYT
+            <span>
+              <svg fill="#9e9e9e" height="16px" width="16px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve" transform="rotate(90)">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.66"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z"></path>
+                </g>
+              </svg>
+            </span>
+          </button>
+          <ul class="kategori-list hidden">
+            {% for kitap in ayt_kitaplar %}
+              <li class="pl-4 hover:underline hover:underline-offset-1">
+                <a href="?sinav_turu=AYT&ders={{ kitap.ders }}">{{ kitap.ders }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex md:flex-row flex-col">
+    <!-- Filtreleme Kategorileri -->
+    <aside class="hidden md:block w-1/4 bg-white p-6 shadow-lg rounded-lg h-full">
+      <h3 class="text-2xl font-semibold mb-4 text-acikmavi">
+        <a href="{% url 'sources' %}">Kategoriler</a>
+      </h3>
+      <div class="space-y-4">
+        <!-- TYT Kategorisi -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-700 mb-2">TYT</h4>
+          <ul>
+            {% for kitap in tyt_kitaplar %}
+              <li class="pl-4 hover:underline hover:underline-offset-1">
+                <a href="?sinav_turu=TYT&ders={{ kitap.ders }}">{{ kitap.ders }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- AYT Kategorisi -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-700 mb-2">AYT</h4>
+          <ul>
+            {% for kitap in ayt_kitaplar %}
+              <li class="pl-4 hover:underline hover:underline-offset-1">
+                <a href="?sinav_turu=AYT&ders={{ kitap.ders }}">{{ kitap.ders }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <div class="md:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:pl-8 pt-16 md:pt-0">
+      {% for kitap in kitaplar %}
+        <div class="relative bg-white shadow-lg rounded-lg overflow-hidden h-full">
+          <img class="w-full h-48 object-cover object-center" src="{%if kitap.kapak_foto_url %}{{kitap.kapak_foto.url}}{%else%}{%static 'img/no_photo.svg'%}{%endif%}" alt="Product Image">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ kitap.sinav_turu }} - {{ kitap.ders }}</h3>
+            <p class="text-sm text-gray-600 mb-4">{{ kitap.kitap_adi }}</p>
+            <div class="flex justify-between items-center">
+              <a href="{% url 'productdetail' id=kitap.id %}">
+                <button class="px-4 py-2 bg-koyumavi text-white rounded-full hover:bg-acikmavi focus:bg-acikmavi">İncele</button>
+              </a>
+            </div>
+            <span class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-koyumavi via-acikmavi to-black"></span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- Pagination Controls -->
+  <div class="flex justify-end mt-8">
+    <div class="flex gap-2">
+        {% if kitaplar.has_previous %}
+            <a href="?{% if selected_sinav_turu %}sinav_turu={{ selected_sinav_turu }}&{% endif %}{% if selected_ders %}ders={{ selected_ders }}&{% endif %}page={{ kitaplar.previous_page_number }}&sort_by={{ request.GET.sort_by }}" class="p-2 bg-koyumavi text-white rounded-full hover:bg-acikmavi focus:bg-acikmavi">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+              </svg>                          
+            </a>
+        {% endif %}
+
+        <span class="flex items-center px-4 py-2 text-gray-800">{{ kitaplar.number }} / {{ kitaplar.paginator.num_pages }}</span>
+
+        {% if kitaplar.has_next %}
+            <a href="?{% if selected_sinav_turu %}sinav_turu={{ selected_sinav_turu }}&{% endif %}{% if selected_ders %}ders={{ selected_ders }}&{% endif %}page={{ kitaplar.next_page_number }}&sort_by={{ request.GET.sort_by }}" class="p-2 bg-koyumavi text-white rounded-full hover:bg-acikmavi focus:bg-acikmavi">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+              </svg>
+            </a>
+        {% endif %}
+    </div>
+</div>
+</section>
+
+{% include 'components/footer.html' %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggleButton');
+    const toggleList = document.getElementById('toggleList');
+
+    toggleButton.addEventListener('click', function() {
+      toggleList.classList.toggle('hidden');
+    });
+
+    const kategoriButton = document.getElementById('kategoriButton');
+    const kategoriList = document.getElementById('kategoriList');
+    const kategoriButtons = document.querySelectorAll('.kategori-button');
+    const kategoriLists = document.querySelectorAll('.kategori-list');
+
+    kategoriButton.addEventListener('click', function() {
+      kategoriList.classList.toggle('hidden');
+    });
+
+    kategoriButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const list = button.nextElementSibling;
+        list.classList.toggle('hidden');
+      });
+    });
+  });
+
+  function sortBooks(sortBy) {
+    window.location.href = `?sort_by=${sortBy}`;
+  }
+</script>
+
+</body>
+</html>

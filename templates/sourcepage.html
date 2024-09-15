@@ -183,9 +183,11 @@
     });
   });
 
-  function sortBooks(sortBy) {
-    window.location.href = `?sort_by=${sortBy}`;
-  }
+  function sortBooks(sortType) {
+            const urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('sort_by', sortType);
+            window.location.search = urlParams.toString();
+        }
 </script>
 
 </body>

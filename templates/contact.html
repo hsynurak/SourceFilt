@@ -1,0 +1,39 @@
+{% load static %}
+{% include "components/header.html" %}
+
+<section class="contact_section layout_padding-bottom">
+  <div class="container">
+    <div class="heading_container heading_center">
+        <h2>
+        Bize Ulaşabilirsiniz!
+        </h2>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-lg-6 mx-auto">
+        <div class="form_container">
+            <form  method="POST" novalidate>
+              {% csrf_token %}
+              <div>
+                <input class="input100" type="text" name="name" placeholder="Adınız" required>
+              </div>
+              <div>
+                <input class="input100" type="email" name="email" placeholder="E-mail Adresiniz" required>
+              </div>
+              <div>
+                <input class="input100" type="text" name="phone" placeholder="Telefon Numaranız" required>
+              </div>
+              <div>
+                <input class="input100" type="text" name="message" placeholder="Mesajınız" required>
+              </div>
+              <br>
+              <div id="success"></div>
+              <div class="form-group">
+                <button class="btn btn-primary" id="send_message_button" type="submit">Gönder</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include "components/footer.html" %}

@@ -9,7 +9,8 @@ class Kitap(models.Model):
     yayincilik = models.CharField(max_length=255)
     sayfa_sayisi = models.IntegerField(blank=True, null=True)
     yayin_tarihi = models.IntegerField(blank=True, null=True) 
-    kapak_foto = models.FileField(blank=True, null=True)
+    #kapak_foto_link = models.CharField(max_length=255, null=True)
+    kapak_foto = models.ImageField(null=True, blank=True)
     puan = models.FloatField(null=True, blank=True)
 
     def __str__(self):

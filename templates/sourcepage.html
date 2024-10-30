@@ -116,7 +116,8 @@
     <div class="md:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:pl-8 pt-16 md:pt-0">
       {% for kitap in kitaplar %}
         <div class="relative bg-white shadow-lg rounded-lg overflow-hidden h-full">
-          <img class="w-full h-48 object-cover object-center" src="{%if kitap.kapak_foto_url %}{{kitap.kapak_foto.url}}{%else%}{%static 'img/no_photo.svg'%}{%endif%}" alt="Product Image">
+          <!--<img class="w-full h-48 object-cover object-center" src="{%if kitap.kapak_foto_url %}{{kitap.kapak_foto.url}}{%else%}{%static 'img/no_photo.svg'%}{%endif%}" alt="Product Image"> -->
+          <img src="{{ kitap.kapak_foto.url }}" alt="Kapak Foto"> <!-- Added by Hüseyin / 30.10.2024 -->
           <div class="p-6">
             <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ kitap.sinav_turu }} - {{ kitap.ders }}</h3>
             <p class="text-sm text-gray-600 mb-4">{{ kitap.kitap_adi }}</p>

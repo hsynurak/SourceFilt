@@ -5,7 +5,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mx-auto max-md:px-2 ">
                     <div class="img">
                         <div class="img-box h-full max-lg:mx-auto rounded-lg">
-                            <img src="{%if kitap.kapak_foto_url %}{{kitap.kapak_foto.url}}{%else%}{%static 'img/no_photo.svg'%}{%endif%}" alt="Product Image"
+                            <img src="{{ kitap.kapak_foto.url }}" alt="Product Image"
                                 class="max-lg:mx-auto lg:ml-auto h-full rounded-lg">
                         </div>
                     </div>

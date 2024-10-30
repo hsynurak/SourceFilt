@@ -3,5 +3,5 @@ from .models import Kitap
 
 @admin.register(Kitap)
 class KitapAdmin(admin.ModelAdmin):
-    list_display = ('sinav_turu', 'ders', 'kitap_adi', 'yazar_adi', 'fiyat', 'yayincilik', 'sayfa_sayisi', 'yayin_tarihi')
+    list_display = ('sinav_turu', 'ders', 'kitap_adi', 'yazar_adi', 'fiyat', 'yayincilik', 'sayfa_sayisi', 'yayin_tarihi','kapak_foto', 'puan')
     search_fields = ('kitap_adi', 'yazar_adi')
